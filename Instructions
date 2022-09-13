@@ -1,0 +1,16 @@
+Test: To test the CLI let's create a VPC using json script from cli  
+  First we need to create a stack: 
+    Stack: is a group of resources
+  To Run the JSON script: 
+    Command: aws cloudformation create-stack --stack-name firstStack --region us-west-2
+    --template-body file://jsonCli.json
+
+Calling create stack fi 
+aws cloudformation create-stack --my-stack $1 --template-body file://$2  --parameters file://$3 --region=us-east-1
+
+
+configure AWS: 
+aws configure
+
+to list users of AWS account: 
+aws iam list-users
