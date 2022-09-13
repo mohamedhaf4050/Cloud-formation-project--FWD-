@@ -7,3 +7,14 @@ Parameters:
     Description: Please enter the IP range (CIDR notation) for this
     Type: String
     Default: 10.0.0.0/16
+
+
+Resoucrces: 
+  VPC:
+    Type: AWS::EC2::VPC
+    Proprties: 
+      CidrBlock: !Ref VpcCIDR
+      EnableDnsHostnames: true
+      Tags: 
+        Key: Name
+        Value: !Ref EnviromentName 

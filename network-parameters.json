@@ -1,7 +1,7 @@
 [
     {
-        "ParameterKey": "EnviromentName",
-        "ParameterValue": "MyProject"
+        "ParameterKey": "EnvironmentName",
+        "ParameterValue": "CLI Project"
     },
 
     {

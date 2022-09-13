@@ -1,5 +1,2 @@
-aws cloudformation create-stack \
---stack-name $1
---stack-body file://$2 \
---parameters file://$3 \
---region-west-2
+aws cloudformation create-stack --stack-name $1 --template-body file://$2  --parameters file://$3 --region=us-east-1
+$SHELL

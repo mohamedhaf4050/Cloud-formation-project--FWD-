@@ -3,3 +3,4 @@ aws cloudformation update-stack \
 --stack-body file://$2 \
 --parameters file://$3 \
 --region-west-2
+$SHELL
