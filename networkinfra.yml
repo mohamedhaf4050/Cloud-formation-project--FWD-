@@ -58,44 +58,42 @@ Resources:
         Type: AWS::EC2::Subnet
         Properties:
             VpcId: !Ref VPC
-            AvailabilityZone: !Select [ 0, !GetAZs '' ] #To create subnet in different AZs
-            CidrBlock: !Ref PublicSubnet1CIDR #Cidr block for subnet 1 
-            MapPublicIpOnLaunch: false
+            AvailabilityZone: !Select [ 0, !GetAZs '' ]
+            CidrBlock: !Ref PublicSubnet1CIDR
+            MapPublicIpOnLaunch: true
             Tags: 
                 - Key: Name 
-                  Value: !Sub ${EnvironmentName} Private Subnet (AZ1)
-
+                  Value: !Sub ${EnvironmentName} Public Subnet (AZ1)
     PublicSubnet2: 
         Type: AWS::EC2::Subnet
         Properties:
             VpcId: !Ref VPC
             AvailabilityZone: !Select [ 1, !GetAZs '' ]
-            CidrBlock: !Ref PublicSubnet2CIDR #Cidr block for subnet 2
-            MapPublicIpOnLaunch: false
-            Tags:  
+            CidrBlock: !Ref PublicSubnet2CIDR
+            MapPublicIpOnLaunch: true
+            Tags: 
                 - Key: Name 
-                  Value: !Sub ${EnvironmentName} Private Subnet (AZ2)
-
+                  Value: !Sub ${EnvironmentName} Public Subnet (AZ2)
     PrivateSubnet1: 
         Type: AWS::EC2::Subnet
         Properties:
             VpcId: !Ref VPC
-            AvailabilityZone: !Select [ 2, !GetAZs '' ]
-            CidrBlock: !Ref PrivateSubnet1CIDR #Cidr block for subnet 3
+            AvailabilityZone: !Select [ 0, !GetAZs '' ]
+            CidrBlock: !Ref PrivateSubnet1CIDR
             MapPublicIpOnLaunch: false
             Tags: 
                 - Key: Name 
-                  Value: !Sub ${EnvironmentName} Private Subnet (AZ3)
+                  Value: !Sub ${EnvironmentName} Private Subnet (AZ1)
     PrivateSubnet2: 
-        Type: AWS::EC2::Subnet #Cidr block for subnet 4
+        Type: AWS::EC2::Subnet
         Properties:
             VpcId: !Ref VPC
-            AvailabilityZone: !Select [ 3, !GetAZs '' ]
-            CidrBlock: !Ref PrivateSubnet2CIDR #Cidr block for subnet 4
+            AvailabilityZone: !Select [ 1, !GetAZs '' ]
+            CidrBlock: !Ref PrivateSubnet2CIDR
             MapPublicIpOnLaunch: false
             Tags: 
                 - Key: Name 
-                  Value: !Sub ${EnvironmentName} Private Subnet (AZ4)
+                  Value: !Sub ${EnvironmentName} Private Subnet (AZ2)
 
 
     NatGateway1EIP:
