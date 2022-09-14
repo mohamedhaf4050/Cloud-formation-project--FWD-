@@ -53,7 +53,8 @@ Resources:
             #!/bin/bash
             sudo apt-get update -y
             sudo apt-get install apache2 -y
-            sudo systemctl start apache2.service          
+            sudo systemctl start apache2.service 
+            sudo echo 'it works! Udagram, Udacity'       
         ImageId: ami-0747bdcabd34c712a
         KeyName: EC2Keypair
         SecurityGroups:
