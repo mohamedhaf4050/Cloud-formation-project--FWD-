@@ -56,7 +56,6 @@ Resources:
             sudo systemctl start apache2.service 
             sudo echo 'it works! Udagram, Udacity'       
         ImageId: ami-0747bdcabd34c712a
-        KeyName: EC2Keypair
         SecurityGroups:
         - Ref: WebServerSecGroup
         InstanceType: t3.medium
